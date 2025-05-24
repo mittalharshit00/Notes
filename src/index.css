@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url(/src/components/notes1.avif);
+  background-image: url(/src/components/bacgground-img.png);
   background-size: cover;
   background-position: center;
   height: 100vh;

@@ -44,30 +44,35 @@ const Home = () => {
 
   }
   return (
-    <div>
-        <div className='flex flex-row gap-7 place-content-between'>
-          <input className="border border-gray-400 p-2 rounded mt-2 w-[66%] pl-4"
+    <div className="min-h-screen px-2 sm:px-8 md:px-24 max-w-7xl mx-auto w-full relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src="/src/components/notes1.avif" alt="background" className="w-full h-full object-cover blur-lg scale-110" />
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+      </div>
+      <div className="relative z-10">
+        <div className='flex flex-col gap-4 md:flex-row md:gap-7 md:items-center md:justify-between w-full'>
+          <input className="border border-gray-400 p-2 rounded mt-2 w-full md:w-3/4 pl-4 min-w-0" 
           type="text" 
           placeholder='Enter title here'
           value ={title}
           onChange={(e)=>setTitle(e.target.value)} 
           />
           <button onClick={createPaste}
-          className="border border-gray-400 p-2 bg-[#0D0628] text-blue-500 rounded mt-2">
+          className="border border-gray-400 p-2 bg-[#0D0628] text-blue-500 rounded mt-2 w-full md:w-auto md:ml-4">
             {pasteId ? "Update My Paste" : "Create My Paste"}
           </button>
       </div>
-
       <div>
-        <textarea className='border border-gray-400 rounded-2xl mt-4 min-w-[600px] p-4'
+        <textarea className='border border-gray-400 rounded-2xl mt-4 w-full min-w-0 p-4 resize-y min-h-[200px] md:min-h-[500px] lg:min-h-[600px]'
           value = {value}
           placeholder='Enter content here'
           onChange={(e)=>setvalue(e.target.value)}
-          rows={20}
+          rows={14}
         />
+      </div>
       </div>
     </div>
   )
 }
 
-export default Home 
+export default Home
